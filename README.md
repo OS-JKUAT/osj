@@ -94,7 +94,14 @@ Contributors will gain valuable real-world experience and build a portfolio whil
 To run the project locally, follow these steps:
 
 ### Prerequisites
-- **[Sail](https://laravel.com/docs/11.x/sail)**: A light-weight command-line interface for interacting with Laravel's default Docker development environment.
+- **[Docker Desktop](https://www.docker.com/products/docker-desktop/)**: Laravel Sail runs on Docker, so you need Docker installed and running on your machine. Its available for Windows, macOS, and Linux.
+
+- **Note for Windows Users:** If you're using Windows, you'll need WSL 2 (Windows Subsystem for Linux 2). Docker Desktop requires WSL 2 for better performance and compatibility. You can install WSL 2 by following the official Microsoft guide [here](https://learn.microsoft.com/en-us/windows/wsl/install).
+
+- **Composer (If Not Installed Already):** You will need Composer to install Laravel dependencies, including Sail. Composer is a dependency management tool for PHP. You can install or learn more about Composer [here](https://getcomposer.org/).
+
+- **Node.js and npm (If Not Installed Already):** learn more [here](https://nodejs.org/en).
+
 
 1. Clone the repository:
     ```bash
@@ -109,11 +116,40 @@ To run the project locally, follow these steps:
     ./vendor/bin/sail composer install
     ./vendor/bin/sail npm install
     ```
-4. Run the application using Laravel Sail:
+4. Copy the .env.example file to .env:
+    ```bash
+    cp .env.example .env
+    ```
+5. Generate Application Key:
+    ```bash
+    ./vendor/bin/sail artisan key:generate
+    ```
+6. Set Up Database Configuration: Open the .env file and set your database credentials:
+    ```bash
+    DB_CONNECTION=mysql
+    DB_HOST=mysql
+    DB_PORT=3306
+    DB_DATABASE=your_database_name
+    DB_USERNAME=your_username
+    DB_PASSWORD=your_password
+    ```
+7. Run Database Migrations:
+    ```bash
+    ./vendor/bin/sail artisan migrate
+    ```
+8. Compile Frontend Assets:
+    ```bash
+    ./vendor/bin/sail npm run dev
+    ```
+9. Run the application using Laravel Sail:
     ```bash
     ./vendor/bin/sail up
     ```
-5. Open your browser and navigate to `http://localhost`.
+10. Access the Application: Through the provided url by sail access the application.
+
+### Tips
+ - You can create an alias for ./vendor/bin/sail .
+ - php artisan < command > format will now be ./vendor/bin/sail artisan < command >.
 
 ## Learning Laravel
 
