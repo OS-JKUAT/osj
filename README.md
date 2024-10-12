@@ -148,7 +148,7 @@ To run the project locally, follow these steps:
 10. Access the Application: Through the provided url by sail access the application.
 
 ### Tips
- - You can create an alias for ./vendor/bin/sail .
+ - You can create an alias for ./vendor/bin/sail . [How to.](https://bobcares.com/blog/laravel-sail-alias/)
  - php artisan < command > format will now be ./vendor/bin/sail artisan < command >.
 
 ## Learning Laravel
