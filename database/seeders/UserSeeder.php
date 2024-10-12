@@ -2,12 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Team;
-use App\Models\User;
 
 class UserSeeder extends Seeder
 {
@@ -23,8 +21,8 @@ class UserSeeder extends Seeder
 
         // Seeding the admin user
         $admin = User::create([
-            'name' => 'Admin User',
-            'email' => 'admin@osj.com',
+            'name'     => 'Admin User',
+            'email'    => 'admin@osj.com',
             'password' => Hash::make('password'), // hashed password
         ]);
 
@@ -33,8 +31,8 @@ class UserSeeder extends Seeder
 
         // Seeding a regular user
         $user = User::create([
-            'name' => 'Regular User',
-            'email' => 'user@osj.com',
+            'name'     => 'Regular User',
+            'email'    => 'user@osj.com',
             'password' => Hash::make('password'), // hashed password
         ]);
 
