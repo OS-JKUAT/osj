@@ -113,18 +113,26 @@ To run the project locally, follow these steps:
     ```
 3. Install dependencies:
     ```bash
-    ./vendor/bin/sail composer install
-    ./vendor/bin/sail npm install
+    docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v $(pwd):/var/www/html \
+    -w /var/www/html \
+    laravelsail/php81-composer:latest \
+    composer install
     ```
 4. Copy the .env.example file to .env:
     ```bash
     cp .env.example .env
     ```
-5. Generate Application Key:
+5. Start Sail by running:
     ```bash
-    ./vendor/bin/sail artisan key:generate
+    cp .env.example .env
     ```
-6. Set Up Database Configuration: Open the .env file and set your database credentials:
+6. Generate Application Key:
+    ```bash
+    ./vendor/bin/sail up -d
+    ```
+7. Set Up Database Configuration: Open the .env file and set your database credentials:
     ```bash
     DB_CONNECTION=mysql
     DB_HOST=mysql
@@ -133,19 +141,20 @@ To run the project locally, follow these steps:
     DB_USERNAME=your_username
     DB_PASSWORD=your_password
     ```
-7. Run Database Migrations:
+8. Run Database Migrations:
     ```bash
-    ./vendor/bin/sail artisan migrate
+    ./vendor/bin/sail artisan migrate --seed
     ```
-8. Compile Frontend Assets:
+9. Compile Frontend Assets:
     ```bash
+    ./vendor/bin/sail npm install
     ./vendor/bin/sail npm run dev
     ```
-9. Run the application using Laravel Sail:
-    ```bash
-    ./vendor/bin/sail up
-    ```
-10. Access the Application: Through the provided url by sail access the application.
+10. Access the Application: Through the provided url by sail access the application or through: http://localhost
+
+#Error pid 62
+1. Kill the process.
+2. Remove left over mysql sock files : sudo rm -f /var/run/mysqld/mysqld.sock
 
 ### Tips
  - You can create an alias for ./vendor/bin/sail . [How to.](https://bobcares.com/blog/laravel-sail-alias/)
