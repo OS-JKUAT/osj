@@ -3,8 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="{{asset('faviconpng/android-chrome-512x512.png')}}" type="image/x-icon">
 
-        <title>Laravel</title>
+        <title>OSJ</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -137,6 +139,7 @@
 
                     <footer class="py-16 text-center text-sm text-black dark:text-white/70">
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                        By Lewys
                     </footer>
                 </div>
             </div>
