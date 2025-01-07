@@ -8,6 +8,6 @@ class UnidentifiedDecendentPage extends Component
 {
     public function render()
     {
-        return view('livewire.ud.unidentified-decendent-page');
+        return view('livewire.ud.unidentified-decendent-page')->layout('layouts.app');
     }
 }
