@@ -43,6 +43,18 @@ new class extends Component
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
+                        <x-nav-link :href="route('missing')" :active="request()->routeIs('missing')" wire:navigate>
+                            {{ __('Missing') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('arrested')" :active="request()->routeIs('arrested')" wire:navigate>
+                            {{ __('Arrested') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('injured')" :active="request()->routeIs('injured')" wire:navigate>
+                            {{ __('Injured') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('ud')" :active="request()->routeIs('ud')" wire:navigate>
+                            {{ __('Roe') }}
+                        </x-nav-link>
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                             @auth
                                 <!-- Authenticated User -->
