@@ -10,25 +10,32 @@
     </section>
 
     <section id="recent" class="mt-12">
-        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">Recently Reported</h2>
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">Recently Reported Missing</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-4">
-                <img src="{{asset('placeholderimages/john-doe.avif')}}" alt="Person 1" class="w-full h-58 object-cover rounded">
-                <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mt-4">John Doe</h3>
-                <p class="text-gray-600 dark:text-gray-400">Last seen: Nairobi, Kenya</p>
-            </div>
+            @foreach ($missingPeople as $person)
+                <a href="{{route('missing.detail', $person->slug)}}">
+                    <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-4">
+                        <img src="{{ asset($person->poster ?? 'placeholderimages/john-doe.avif') }}" alt="image of {{$person->name}}" class="w-full h-58 object-cover rounded">
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mt-4">{{$person->name}}</h3>
+                        <p class="text-gray-600 dark:text-gray-400">{{$person->nickname ?? 'N/A'}}</p>
+                        <p class="text-gray-600 dark:text-gray-400">{{$person->age ?? 'N/A'}}</p>
+                        <p class="text-gray-600 dark:text-gray-400">{{$person->status ?? 'N/A'}}</p>
+                    </div>
+                </a>
+            @endforeach
+        </div>
 
-            <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-4">
-                <img src="{{asset('placeholderimages/john-doe.avif')}}" alt="Person 1" class="w-full h-58 object-cover rounded">
-                <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mt-4">John Doe</h3>
-                <p class="text-gray-600 dark:text-gray-400">Last seen: Nairobi, Kenya</p>
-            </div>
-
-            <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-4">
-                <img src="{{asset('placeholderimages/john-doe.avif')}}" alt="Person 1" class="w-full h-58 object-cover rounded">
-                <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mt-4">John Doe</h3>
-                <p class="text-gray-600 dark:text-gray-400">Last seen: Nairobi, Kenya</p>
-            </div>
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4 mt-12">Recently Reported Found</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            @foreach ($missingFoundPeople as $foundPerson)
+                <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-4">
+                    <img src="{{asset('placeholderimages/john-doe.avif')}}" alt="Person 1" class="w-full h-58 object-cover rounded">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mt-4">{{$foundPerson->name}}</h3>
+                    <p class="text-gray-600 dark:text-gray-400">{{$foundPerson->nickname ?? 'N/A'}}</p>
+                    <p class="text-gray-600 dark:text-gray-400">{{$foundPerson->age ?? 'N/A'}}</p>
+                    <p class="text-gray-600 dark:text-gray-400">{{$foundPerson->status ?? 'N/A'}}</p>
+                </div>
+            @endforeach
         </div>
     </section>
 
