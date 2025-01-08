@@ -5,7 +5,7 @@
             <h1 class="text-4xl font-extrabold tracking-tight text-gray-800 dark:text-gray-200 sm:text-5xl lg:text-6xl">Empowering the JKUAT Student Community Through Open Source</h1>
             <p class="mt-6 text-xl text-gray-700 dark:text-gray-300">Collaborate, innovate, and build together. Discover resources, connect with peers, and contribute to the future of tech at JKUAT.</p>
             <div class="mt-8 space-x-4">
-                <a href="#" class="px-8 py-3 bg-indigo-600 text-white text-lg font-medium rounded-md">Join the Community</a>
+                <a href="https://chat.whatsapp.com/DDtFzpck4xaHKJibfTcfIJ" class="px-8 py-3 bg-indigo-600 text-white text-lg font-medium rounded-md">Join the Community</a>
                 <a href="#resources" class="px-8 py-3 bg-gray-200 text-lg font-medium rounded-md">Explore Resources</a>
             </div>
         </div>
@@ -46,6 +46,7 @@
         <div class="max-w-7xl md:my-5 mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-extrabold  text-center">Upcoming Resources</h2>
             <div class="mt-6 grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
+
                 <div class="feature-card">
                     <h3 class="text-xl font-semibold text-indigo-600">Blogs & News: </h3>
                     <p class="mt-2 text-gray-600">Students can publish articles to practice and showcase their writing skills.</p>
