@@ -7,6 +7,7 @@ use App\Livewire\Arrested\ArrestedHomePage;
 use App\Livewire\Injured\InjuredHomePage;
 
 use App\Livewire\Missing\MissingHomePage;
+use App\Livewire\Missing\MissingPersonDetailPage;
 
 use App\Livewire\Ud\UnidentifiedDecendentPage;
 
@@ -22,6 +23,10 @@ Route::get('arrested-home', ArrestedHomePage::class)
 // Missing Page
 Route::get('missing-home', MissingHomePage::class)
     ->name('missing');
+
+Route::get('missing/{slug}',MissingPersonDetailPage::class)
+    ->name('missing.detail');
+
 // Injured Page
 Route::get('injured-persons-home', InjuredHomePage::class)
     ->name('injured');
