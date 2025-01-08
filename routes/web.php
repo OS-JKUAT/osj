@@ -11,6 +11,11 @@ use App\Livewire\Missing\MissingPersonDetailPage;
 
 use App\Livewire\Ud\UnidentifiedDecendentPage;
 
+// Admins
+// Missing
+use App\Livewire\Admin\Missing\AddMissingPersonPage;
+use App\Livewire\Admin\Missing\EditMissingPersonPage;
+
 use App\Livewire\HomePage;
 
 
@@ -34,6 +39,16 @@ Route::get('injured-persons-home', InjuredHomePage::class)
 // UD
 Route::get('unidentified-decendents-home', UnidentifiedDecendentPage::class)
     ->name('ud');
+
+// ADMIN
+// Route::middleware(['auth', 'role:admin'])->group(function () {
+    // This route is now protected by the auth and role:admin middleware
+    // Route::resource('missing_people', MissingPersonController::class);
+// });
+
+// Missing
+Route::get('missing-person/add', AddMissingPersonPage::class)->middleware('auth')->name('missing.add');
+Route::get('missing-person/edit/{id}', EditMissingPersonPage::class)->middleware('auth')->name('missing.edit');
 
 // Auth
 Route::view('dashboard', 'dashboard')
