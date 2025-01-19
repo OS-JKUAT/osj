@@ -81,11 +81,11 @@
                     <a href="{{ route('missing.detail', $foundPerson->slug) }}">
                         <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-4 mt-2 -mb-2 flex flex-col items-center h-72">
                             <!-- Image with max height -->
-                            <img
+                            {{-- <img
                                 src="{{ asset($foundPerson->poster ? 'storage/poster/' . $foundPerson->poster : 'placeholderimages/john-doe.avif') }}"
                                 alt="image of {{ $foundPerson->name }}"
-                                class="sm:w-full max-h-36 object-cover rounded">
-
+                                class="sm:w-full max-h-36 object-cover rounded"> --}}
+                            <img src="{{ $foundPerson->poster ? asset('storage/poster/' . $foundPerson->poster) : asset('placeholderimages/john-doe.avif') }}" alt="image of {{ $foundPerson->name }}" class="sm:w-full max-h-36 object-cover rounded">
                             <!-- Content -->
                             <div class="mt-4 text-center">
                                 <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">{{ $foundPerson->name }}</h3>
