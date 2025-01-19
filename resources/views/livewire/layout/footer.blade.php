@@ -28,20 +28,17 @@
             </ul>
         </div>
         {{-- Contact section --}}
-        {{-- <div class="text-center py-4">
+        <div class="text-center py-4">
             <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Dev Contacts</h4>
             <ul class="text-gray-600 dark:text-gray-400">
-                <li>
-                    <a href="mailto:#" class="underline">#</a>
-                </li>
-                <li>Whatsapp:
-                    <a href="https://wa.me/#" class="underline">#</a>
+                <li>Whatsapp/Mpesa:
+                    <a href="https://wa.me/254716340285" class="underline">+254716340285</a>
                 </li>
                 <li>X:
-                    <a href="https://x.com/#" target="_blank" class="underline">#</a>
+                    <a href="https://x.com/OS_J_01" target="_blank" class="underline">OSJ</a>
                 </li>
             </ul>
-        </div> --}}
+        </div>
 
         {{-- Copyright --}}
         <div class="text-center py-4">

@@ -13,6 +13,8 @@
     <section class="text-center">
         <h1 class="text-4xl font-extrabold text-gray-900 dark:text-gray-200 mb-6">Help Us Bring Them Home</h1>
         <p class="text-gray-600 dark:text-gray-400 text-lg">Search for missing persons or report a loved one who has gone missing. Together, we can make a difference.</p>
+        <x-support-text></x-support-text>
+
         {{-- <div class="mt-8">
             <input type="text" placeholder="Search by name or location" class="w-full md:w-1/2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700">
             <button class="mt-4 md:mt-0 md:ml-4 px-6 py-2 bg-blue-600 dark:bg-blue-500 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600">Search</button>
@@ -113,6 +115,8 @@
                 </div>
             @endforeach
         </div>
+        <x-support-text></x-support-text>
+
     </section>
 
     {{-- <section id="report" class="mt-12 bg-gray-200 dark:bg-gray-700 p-6 rounded-lg">

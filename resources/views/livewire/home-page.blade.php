@@ -7,12 +7,15 @@
             <div class="mt-8 space-x-4">
                 <a href="https://chat.whatsapp.com/DDtFzpck4xaHKJibfTcfIJ" class="px-8 py-3 bg-indigo-600 text-white text-lg font-medium rounded-md">Join the Community</a>
                 <a href="#resources" class="px-8 py-3 bg-gray-200 text-lg font-medium rounded-md">Explore Resources</a>
+
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
     <section class="bg-gray-200 py-16">
+        <x-support-text></x-support-text>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-extrabold  text-center" id="resources">Resources</h2>
             <div class="mt-6 grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">

@@ -68,5 +68,7 @@
                 <li><strong>Contact:</strong> {{ $person->reporter_contact }}</li>
             </ul>
         </div>
+        <x-support-text></x-support-text>
+
     </div>
 </div>
