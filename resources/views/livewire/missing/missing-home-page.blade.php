@@ -39,7 +39,7 @@
                         <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-4 mt-2 -mb-2 flex flex-col items-center h-72">
                             <!-- Image with max height -->
                             <img
-                                src="{{ asset($person->poster ? 'storage/poster/' . $person->poster : 'placeholderimages/john-doe.avif') }}"
+                                src="{{ asset($person->poster ? 'storage/' . $person->poster : 'placeholderimages/john-doe.avif') }}"
                                 alt="image of {{ $person->name }}"
                                 class="sm:w-full max-h-36 object-cover rounded">
 
