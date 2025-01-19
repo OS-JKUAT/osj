@@ -71,15 +71,10 @@ class EditMissingPersonPage extends Component
 
         $missingPerson = MissingPerson::findOrFail($this->missingPersonId);
 
-        $posterPath = $this->poster
+        // Handle poster upload or fallback to the existing poster
+        $posterPath = $this->poster && $this->poster instanceof \Illuminate\Http\UploadedFile
             ? $this->poster->store('poster', 'public')
             : $missingPerson->poster;
-
-        if ($this->poster) {
-            $validatedData['poster'] = $this->poster->store('poster', 'public');
-        } else {
-            $validatedData['poster'] = $missingPerson->poster; // Use the existing poster if no new one is uploaded
-        }
 
         $missingPerson->update([
             'name' => $this->name,
@@ -108,6 +103,7 @@ class EditMissingPersonPage extends Component
         session()->flash('message', 'Missing person updated successfully!');
         return redirect()->route('missing');
     }
+
 
     public function render()
     {
