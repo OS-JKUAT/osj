@@ -69,7 +69,7 @@
             <!-- Citizenship -->
             <div class="mb-4">
                 <label class="block text-sm font-medium mb-1 dark:text-gray-200">Citizenship</label>
-                <input wire:model="citizen" type="text" class="w-full border rounded p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" />
+                <input wire:model="citizenship" type="text" class="w-full border rounded p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" />
                 @error('citizen') <span class="text-red-600 dark:text-red-400">{{ $message }}</span> @enderror
             </div>
 
