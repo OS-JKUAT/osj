@@ -44,8 +44,8 @@ class MissingHomePage extends Component
     public function mount()
     {
         // Fetch missing people data from the database
-        $this->missingPeople = MissingPerson::where('status','missing')->select('id','poster', 'name','slug', 'nickname', 'age', 'status')->orderBy('created_at','asc')->get();
-        $this->missingFoundPeople = MissingPerson::where('status','found')->select('id','poster','name','slug','nickname','age','status')->orderBy('created_at','asc')->get();
+        $this->missingPeople = MissingPerson::where('status','missing')->select('id','poster', 'name','slug', 'nickname', 'age', 'status')->orderBy('created_at','desc')->get();
+        $this->missingFoundPeople = MissingPerson::where('status','found')->select('id','poster','name','slug','nickname','age','status')->orderBy('created_at','desc')->get();
     }
 
     public function render()
