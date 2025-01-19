@@ -38,10 +38,11 @@
                     <a href="{{ route('missing.detail', $person->slug) }}">
                         <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-4 mt-2 -mb-2 flex flex-col items-center h-72">
                             <!-- Image with max height -->
-                            <img
-                                src="{{ asset($person->poster ? 'storage/' . $person->poster : 'placeholderimages/john-doe.avif') }}"
+                            {{-- <img
+                                src="{{ asset($person->poster ? 'storage/poster/' . $person->poster : 'placeholderimages/john-doe.avif') }}"
                                 alt="image of {{ $person->name }}"
-                                class="sm:w-full max-h-36 object-cover rounded">
+                                class="sm:w-full max-h-36 object-cover rounded"> --}}
+                            <img src="{{ $person->poster ? asset('storage/' . $person->poster) : asset('placeholderimages/john-doe.avif') }}" alt="image of {{ $person->name }}" class="sm:w-full max-h-36 object-cover rounded">
 
                             <!-- Content -->
                             <div class="mt-4 text-center">
