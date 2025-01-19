@@ -42,7 +42,7 @@
                                 src="{{ asset($person->poster ? 'storage/poster/' . $person->poster : 'placeholderimages/john-doe.avif') }}"
                                 alt="image of {{ $person->name }}"
                                 class="sm:w-full max-h-36 object-cover rounded"> --}}
-                            <img src="{{ $person->poster ? asset('storage/' . $person->poster) : asset('placeholderimages/john-doe.avif') }}" alt="image of {{ $person->name }}" class="sm:w-full max-h-36 object-cover rounded">
+                            <img src="{{ $person->poster ? asset('storage/poster/' . $person->poster) : asset('placeholderimages/john-doe.avif') }}" alt="image of {{ $person->name }}" class="sm:w-full max-h-36 object-cover rounded">
 
                             <!-- Content -->
                             <div class="mt-4 text-center">
