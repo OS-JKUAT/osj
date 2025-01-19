@@ -41,7 +41,7 @@ class EditMissingPersonPage extends Component
         return [
             'name' => 'required|string|max:255',
             'nickname' => 'nullable|string|max:255',
-            'age' => 'nullable|integer|min:0|max:120',
+            'age' => 'nullable',
             'gender' => 'nullable|string|max:20',
             'hair' => 'nullable|string|max:255',
             'eyes' => 'nullable|string|max:255',
