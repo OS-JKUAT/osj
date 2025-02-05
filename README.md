@@ -102,6 +102,13 @@ To run the project locally, follow these steps:
 
 - **Node.js and npm (If Not Installed Already):** learn more [here](https://nodejs.org/en).
 
+Confirm you have docker installed:
+```bash
+docker --version
+docker-compose --version
+./vendor/bin/sail version
+```
+
 
 1. Clone the repository:
     ```bash
@@ -126,19 +133,19 @@ To run the project locally, follow these steps:
     ```
 5. Start Sail by running:
     ```bash
-    cp .env.example .env
+    ./vendor/bin/sail up -d
     ```
 6. Generate Application Key:
     ```bash
-    ./vendor/bin/sail up -d
+    ./vendor/bin/sail artisan key:generate
     ```
 7. Set Up Database Configuration: Open the .env file and set your database credentials:
     ```bash
     DB_CONNECTION=mysql
     DB_HOST=mysql
     DB_PORT=3306
-    DB_DATABASE=your_database_name
-    DB_USERNAME=your_username
+    DB_DATABASE=osj
+    DB_USERNAME=your_username or root
     DB_PASSWORD=your_password
     ```
 8. Run Database Migrations:
@@ -148,6 +155,7 @@ To run the project locally, follow these steps:
 9. Compile Frontend Assets:
     ```bash
     ./vendor/bin/sail npm install
+    ./vendor/bin/sail npm run build
     ./vendor/bin/sail npm run dev
     ```
 10. Access the Application: Through the provided url by sail access the application or through: http://localhost
