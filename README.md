@@ -178,7 +178,7 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within OSJ site/code, please send an e-mail to Lewis Wambugu via [lewiswambugu01@gmail.com](mailto:lewiswambugu01@gmail.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within OSJ site/code, please send an e-mail to Lewis via [lewiswambugu01@gmail.com](mailto:lewiswambugu01@gmail.com). All security vulnerabilities will be promptly addressed.
 
 ## OSJ Sponsors & Partners
 
