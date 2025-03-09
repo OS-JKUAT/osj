@@ -16,10 +16,18 @@ use App\Livewire\Ud\UnidentifiedDecendentPage;
 use App\Livewire\Admin\Missing\AddMissingPersonPage;
 use App\Livewire\Admin\Missing\EditMissingPersonPage;
 
+//Roles and Permissions Management
+use App\Livewire\Admin\RolesPage;
+use App\Livewire\Admin\PermissionsPage;
+// use Spatie\Permission\Models\Role;
+
 use App\Livewire\HomePage;
 
 
 Route::get('/', HomePage::class)->name('home');
+// Route::get('/test-roles', function () {
+//     return Role::with('permissions')->get();
+// });
 
 // Arrested
 Route::get('arrested-home', ArrestedHomePage::class)
@@ -40,15 +48,18 @@ Route::get('injured-persons-home', InjuredHomePage::class)
 Route::get('unidentified-decendents-home', UnidentifiedDecendentPage::class)
     ->name('ud');
 
-// ADMIN
-// Route::middleware(['auth', 'role:admin'])->group(function () {
-    // This route is now protected by the auth and role:admin middleware
-    // Route::resource('missing_people', MissingPersonController::class);
-// });
+//admin
+Route::middleware(['auth'])->group(function () {
+    //Missing persons
+    Route::get('missing-person/add', AddMissingPersonPage::class)->middleware('auth')->name('missing.add');
+    Route::get('missing-person/edit/{id}', EditMissingPersonPage::class)->middleware('auth')->name('missing.edit');
 
-// Missing
-Route::get('missing-person/add', AddMissingPersonPage::class)->middleware('auth')->name('missing.add');
-Route::get('missing-person/edit/{id}', EditMissingPersonPage::class)->middleware('auth')->name('missing.edit');
+    //Roles management
+    Route::get('/admin/roles', RolesPage::class)->name('roles-page.index');
+    Route::get('/admin/permissions', PermissionsPage::class)->name('permissions-page.index');
+});
+
+
 
 // Auth
 Route::view('dashboard', 'dashboard')
