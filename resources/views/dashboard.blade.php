@@ -11,6 +11,17 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("You're logged in!") }}
                 </div>
+                @auth
+                    @if(auth()->user()->hasRole(['admin','missing_person_admin']))
+                        <div class="p-6 text-gray-900 dark:text-gray-100">
+                            <a href="{{route('roles-page.index')}}">Roles</a>
+                        </div>
+                        <div class="p-6 text-gray-900 dark:text-gray-100">
+                            <a href="{{route('permissions-page.index')}}">Permissions</a>
+                        </div>
+                    @endif
+                @endauth
+
             </div>
         </div>
     </div>

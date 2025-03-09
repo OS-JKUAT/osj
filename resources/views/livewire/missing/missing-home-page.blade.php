@@ -25,7 +25,7 @@
         <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">Recently Reported Missing</h2>
 
         @auth
-            @if(auth()->user()->hasRole('admin'))
+            @if(auth()->user()->hasRole(['admin','missing_person_admin']))
                 <div class="flex justify-end">
                     <a href="{{ route('missing.add') }}"
                     class="inline-block bg-indigo-600 text-white font-semibold py-2 px-4 rounded shadow hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-300">
@@ -56,7 +56,7 @@
 
                         </div>
                     </a>
-                    @if(Auth::check() && Auth::user()->hasRole('admin'))
+                    @if(Auth::check() && Auth::user()->hasRole(['admin','missing_person_admin']))
                         <button
                             class="px-4 bg-red-600 text-white rounded-md hover:bg-red-700 z-10"
                             onclick="if (confirm('Are you sure you want to delete this person: {{$person->name}}?')) { Livewire.dispatch('deletePerson', [{{$person->id}}])}"
@@ -97,13 +97,16 @@
                             </div>
                         </div>
                     </a>
-                    @if(Auth::check() && Auth::user()->hasRole('admin'))
-                        <button
+                    @if(Auth::check() && Auth::user()->hasRole(['admin','missing_person_admin']))
+
+                        @if (Auth::check() && Auth::user()->hasRole('admin'))
+                            <button
                             class="px-4 bg-red-600 text-white rounded-md hover:bg-red-700 z-10"
                             onclick="if (confirm('Are you sure you want to delete this person: {{$foundPerson->name}}?')) { Livewire.dispatch('deletePerson', [{{$foundPerson->id}}])}"
-                        >
-                            Delete
+                            >
+                                Delete
                         </button>
+                        @endif
                         <a href="{{route('missing.edit', $foundPerson->id)}}">
                             <button
                                 class="px-4 bg-green-600 text-white rounded-md hover:bg-green-700 z-10"
