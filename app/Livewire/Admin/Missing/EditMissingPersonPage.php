@@ -23,7 +23,7 @@ class EditMissingPersonPage extends Component
      */
     public function mount($id)
     {
-        if (!Auth::user() || !Auth::user()->hasRole('admin')) {
+        if (!Auth::user() || !Auth::user()->hasRole(['admin','missing_person_admin'])) {
             abort(403, 'Unauthorized action.');
         }
 
