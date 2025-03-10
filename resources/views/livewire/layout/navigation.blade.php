@@ -93,9 +93,9 @@ new class extends Component
                             <x-dropdown-link :href="route('login')" wire:navigate>
                                 {{ __('Log In') }}
                             </x-dropdown-link>
-                            {{-- <x-dropdown-link :href="route('register')" wire:navigate>
+                            <x-dropdown-link :href="route('register')" wire:navigate>
                                 {{ __('Register') }}
-                            </x-dropdown-link> --}}
+                            </x-dropdown-link>
                         @endauth
                     </x-slot>
                 </x-dropdown>
@@ -164,9 +164,9 @@ new class extends Component
                     </x-responsive-nav-link>
 
                     <!-- Authentication -->
-                    {{-- <x-responsive-nav-link :href="route('register')" wire:navigate>
+                    <x-responsive-nav-link :href="route('register')" wire:navigate>
                         {{ __('Register') }}
-                    </x-responsive-nav-link> --}}
+                    </x-responsive-nav-link>
                 @endauth
             </div>
         </div>
