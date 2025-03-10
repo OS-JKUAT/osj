@@ -37,6 +37,9 @@
                 <li>X:
                     <a href="https://x.com/OS_J_01" target="_blank" class="underline">OSJ</a>
                 </li>
+                <li>GitHub:
+                    <a href="https://github.com/OS-JKUAT/osj" target="_blank" class="underline">OS-JKUAT/osj</a>
+                </li>
             </ul>
         </div>
 
