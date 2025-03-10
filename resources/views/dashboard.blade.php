@@ -12,12 +12,15 @@
                     {{ __("You're logged in!") }}
                 </div>
                 @auth
-                    @if(auth()->user()->hasRole(['admin','missing_person_admin']))
+                    @if(auth()->user()->hasRole('admin'))
                         <div class="p-6 text-gray-900 dark:text-gray-100">
                             <a href="{{route('roles-page.index')}}">Roles</a>
                         </div>
                         <div class="p-6 text-gray-900 dark:text-gray-100">
                             <a href="{{route('permissions-page.index')}}">Permissions</a>
+                        </div>
+                        <div class="p-6 text-gray-900 dark:text-gray-100">
+                            <a href="{{route('admin.users')}}">Users</a>
                         </div>
                     @endif
                 @endauth

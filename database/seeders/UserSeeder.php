@@ -19,24 +19,5 @@ class UserSeeder extends Seeder
         $adminRole = Role::firstOrCreate(['name' => 'admin']);
         $userRole = Role::firstOrCreate(['name' => 'user']);
 
-        // Seeding the admin user
-        $admin = User::create([
-            'name'     => 'Admin User',
-            'email'    => 'admin@osj.com',
-            'password' => Hash::make('password'), // hashed password
-        ]);
-
-        // Assigning role to admin
-        $admin->assignRole($adminRole);
-
-        // Seeding a regular user
-        $user = User::create([
-            'name'     => 'Regular User',
-            'email'    => 'user@osj.com',
-            'password' => Hash::make('password'), // hashed password
-        ]);
-
-        // Assigning role to user
-        $user->assignRole($userRole);
     }
 }

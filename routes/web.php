@@ -19,7 +19,9 @@ use App\Livewire\Admin\Missing\EditMissingPersonPage;
 //Roles and Permissions Management
 use App\Livewire\Admin\RolesPage;
 use App\Livewire\Admin\PermissionsPage;
-// use Spatie\Permission\Models\Role;
+
+//USer Management
+use App\Livewire\Admin\UserManagementPage;
 
 use App\Livewire\HomePage;
 
@@ -57,6 +59,9 @@ Route::middleware(['auth'])->group(function () {
     //Roles management
     Route::get('/admin/roles', RolesPage::class)->name('roles-page.index');
     Route::get('/admin/permissions', PermissionsPage::class)->name('permissions-page.index');
+
+    //userManagement
+    Route::get('/admin/users', UserManagementPage::class)->name('admin.users');
 });
 
 
