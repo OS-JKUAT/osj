@@ -11,6 +11,10 @@ use App\Livewire\Missing\MissingPersonDetailPage;
 
 use App\Livewire\Ud\UnidentifiedDecendentPage;
 
+// Maandamano
+use App\Livewire\Maandamano\MaandamanoHeroesHomePage;
+use App\Livewire\Maandamano\MaandamanoHeroShow;
+
 // Admins
 // Missing
 use App\Livewire\Admin\Missing\AddMissingPersonPage;
@@ -22,6 +26,10 @@ use App\Livewire\Admin\PermissionsPage;
 
 //USer Management
 use App\Livewire\Admin\UserManagementPage;
+
+// Maandamano
+use App\Livewire\Admin\Maandamano\AdminMaandamanoHeroesAddPage;
+use App\Livewire\Admin\Maandamano\AdminMaandamanoHeroesEditPage;
 
 use App\Livewire\HomePage;
 
@@ -50,6 +58,11 @@ Route::get('injured-persons-home', InjuredHomePage::class)
 Route::get('unidentified-decendents-home', UnidentifiedDecendentPage::class)
     ->name('ud');
 
+// Maandamano Heroes
+Route::get('maandamano-heroes', MaandamanoHeroesHomePage::class)->name('maandamano.heroes');
+Route::get('/heroes/{slug}', MaandamanoHeroShow::class)->name('heroes.show');
+
+
 //admin
 Route::middleware(['auth'])->group(function () {
     //Missing persons
@@ -62,6 +75,10 @@ Route::middleware(['auth'])->group(function () {
 
     //userManagement
     Route::get('/admin/users', UserManagementPage::class)->name('admin.users');
+
+    // Maandamano Heroes
+    Route::get('/admin/maandamano-heroes/add', AdminMaandamanoHeroesAddPage::class)->name('admin.maandamano-heroes.add');
+    Route::get('/admin/maandamano-heroes/edit/{heroId}', AdminMaandamanoHeroesEditPage::class)->name('maandamano-heroes.edit');
 });
 
 

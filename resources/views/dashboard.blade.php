@@ -22,6 +22,9 @@
                         <div class="p-6 text-gray-900 dark:text-gray-100">
                             <a href="{{route('admin.users')}}">Users</a>
                         </div>
+                        <div class="p-6 text-gray-900 dark:text-gray-100">
+                            <a href="{{route('admin.maandamano-heroes.add')}}">Maandamano Heroes</a>
+                        </div>
                     @endif
                 @endauth
 

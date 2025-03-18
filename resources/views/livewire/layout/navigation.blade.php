@@ -46,12 +46,15 @@ new class extends Component
                         <x-nav-link :href="route('missing')" :active="request()->routeIs('missing')" wire:navigate>
                             {{ __('Missing') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('maandamano.heroes')" :active="request()->routeIs('maandamano.heroes')" wire:navigate>
+                            {{ __('Heroes') }}
+                        </x-nav-link>
                         <x-nav-link :href="route('arrested')" :active="request()->routeIs('arrested')" wire:navigate>
                             {{ __('Arrested') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('injured')" :active="request()->routeIs('injured')" wire:navigate>
+                        {{-- <x-nav-link :href="route('injured')" :active="request()->routeIs('injured')" wire:navigate>
                             {{ __('Injured') }}
-                        </x-nav-link>
+                        </x-nav-link> --}}
                         <x-nav-link :href="route('ud')" :active="request()->routeIs('ud')" wire:navigate>
                             {{ __('Roe') }}
                         </x-nav-link>
@@ -120,14 +123,19 @@ new class extends Component
             </x-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('maandamano.heroes')" :active="request()->routeIs('maandamano.heroes')" wire:navigate>
+                {{ __('Heroes') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('arrested')" :active="request()->routeIs('arrested')" wire:navigate>
                 {{ __('Arrested') }}
             </x-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('injured')" :active="request()->routeIs('injured')" wire:navigate>
+            {{-- <x-responsive-nav-link :href="route('injured')" :active="request()->routeIs('injured')" wire:navigate>
                 {{ __('injured') }}
-            </x-responsive-nav-link>
+            </x-responsive-nav-link> --}}
         </div>
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('ud')" :active="request()->routeIs('ud')" wire:navigate>
